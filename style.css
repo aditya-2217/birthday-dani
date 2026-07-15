@@ -1,0 +1,953 @@
+/* ==========================================
+   FOR DANI
+   VERSION 1.0
+========================================== */
+html{
+
+    scroll-behavior:smooth;
+
+}
+:root{
+
+    --background:#F7F3FC;
+
+    --card:#FFFFFF;
+
+    --text:#2C2735;
+
+    --secondary:#6F687A;
+
+    --accent:#A58BC7;
+
+    --gold:#D8C8F2;
+
+}
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    background:var(--background);
+
+    color:var(--text);
+
+    font-family:'Manrope',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* ==========================
+      LANDING SCREEN
+========================== */
+
+#landing{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:.8s;
+
+    padding:30px;
+
+}
+
+
+
+.landing-content{
+
+    max-width:550px;
+
+}
+
+
+
+.landing-content h1{
+
+    font-family:'DM Serif Display',serif;
+
+    font-size:60px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.landing-content p{
+
+    font-size:22px;
+
+    color:var(--secondary);
+
+    line-height:1.8;
+
+}
+
+
+
+#beginButton{
+
+    background:rgba(180,151,214,.9);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    border:none;
+
+    padding:18px 42px;
+
+    border-radius:999px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin-top:30px;
+
+    box-shadow:0 15px 35px rgba(180,151,214,.30);
+
+    transition:all .35s ease;
+
+    animation:floatButton 4s ease-in-out infinite;
+
+}
+
+#beginButton:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 22px 45px rgba(180,151,214,.40);
+
+}
+
+@keyframes floatButton{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+#website{
+
+    display:none;
+
+}
+
+
+
+/* ==========================
+      HERO
+========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+
+
+.hero h2{
+
+    font-family:'DM Serif Display',serif;
+
+    font-size:56px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.hero span{
+
+    color:var(--secondary);
+
+    font-size:18px;
+
+}
+
+
+
+.hero p{
+
+    margin-top:40px;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    max-width:700px;
+
+}
+
+
+
+.hero-photo{
+
+    margin-top:60px;
+
+}
+
+
+.hero-photo img{
+
+    width:280px;
+    max-width:85vw;
+
+    border-radius:24px;
+
+    transform:rotate(-3deg);
+
+}
+
+.hero-photo img:hover{
+
+    transform:rotate(0deg) scale(1.03);
+
+}
+
+
+
+.scroll{
+
+    margin-top:70px;
+
+    color:var(--secondary);
+
+    animation:bounce 2s infinite;
+
+}
+
+
+
+@keyframes bounce{
+
+    50%{
+
+        transform:translateY(12px);
+
+    }
+
+}
+
+
+
+/* ==========================
+      MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.landing-content h1{
+
+font-size:54px;
+
+}
+
+.hero h2{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+#beginButton{
+
+width:100%;
+
+}
+
+}/* ==========================
+      CHAPTERS
+========================== */
+
+.chapter{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:120px 25px;
+
+    text-align:center;
+
+}
+
+.chapter-label{
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    color:var(--accent);
+
+    font-size:13px;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.chapter h3{
+
+    font-family:'DM Serif Display',serif;
+
+    font-size:38px;
+
+    font-weight:400;
+
+    margin-bottom:55px;
+
+    color:var(--text);
+
+}
+
+.chapter-content{
+
+    max-width:680px;
+
+    text-align:center;
+
+}
+
+.chapter-content p{
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:var(--secondary);
+
+    margin:0 auto 22px;
+
+    max-width:620px;
+
+}
+
+.chapter-content p:first-child{
+
+    color:var(--text);
+
+    font-weight:600;
+
+    font-size:28px;
+
+    margin-bottom:34px;
+
+}/* ==========================================
+   Fade In Animation
+========================================== */
+
+.fade-section{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:all .9s ease;
+
+}
+
+.fade-section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================
+   Divider
+========================================== */
+
+.chapter-divider{
+
+    margin-top:90px;
+
+    font-size:20px;
+
+    color:var(--accent);
+
+    letter-spacing:12px;
+
+    opacity:.55;
+
+}
+/* ==========================================
+   CHAPTER 02 - ACROSS THE MILES
+========================================== */
+
+.chapter-number{
+
+margin-bottom:12px;
+
+}
+
+.journey-intro{
+
+    max-width:620px;
+    text-align:center;
+    font-size:22px;
+    line-height:1.9;
+    color:var(--secondary);
+    margin:50px auto 80px;
+
+}
+
+.journey-map{
+
+    width:min(900px,90%);
+    margin:0 auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:40px;
+
+}
+
+.location{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.dot{
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    margin-bottom:14px;
+
+    box-shadow:0 0 25px rgba(165,139,199,.35);
+
+}
+
+.location span{
+
+    font-size:18px;
+
+    color:var(--text);
+
+}
+
+.route{
+
+    flex:1;
+
+    height:3px;
+
+    background:#d9cceb;
+
+    position:relative;
+
+    border-radius:50px;
+
+}
+
+.plane{
+
+    position:absolute;
+
+    left:50%;
+
+    top:-18px;
+
+    transform:translateX(-50%);
+
+    font-size:34px;
+
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.15));
+
+}
+
+.journey-ending{
+
+    text-align:center;
+
+    margin-top:90px;
+
+}
+
+.journey-ending h4{
+
+    font-family:'DM Serif Display',serif;
+
+    font-size:34px;
+
+    font-weight:400;
+
+    margin-bottom:18px;
+
+}
+
+.journey-ending p{
+
+    font-size:21px;
+
+    color:var(--secondary);
+
+}
+
+
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:768px){
+
+.journey-map{
+
+flex-direction:column;
+
+gap:35px;
+
+}
+
+.route{
+
+width:3px;
+
+height:180px;
+
+}
+
+.plane{
+
+left:-14px;
+
+top:50%;
+
+transform:translateY(-50%) rotate(90deg);
+
+}
+
+.location span{
+
+font-size:16px;
+
+text-align:center;
+
+}
+
+.journey-intro{
+
+font-size:19px;
+
+}
+
+}
+/* ==========================================
+   CHAPTER 03
+========================================== */
+
+.memory-grid{
+
+    width:min(1100px,92%);
+    margin:70px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+.memory-card{
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.65);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.05);
+
+    transition:.35s ease;
+
+}
+
+.memory-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 22px 50px rgba(0,0,0,.08);
+
+}
+
+.memory-title{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:30px;
+
+    text-align:left;
+
+    font-family:'DM Serif Display',serif;
+
+    font-size:28px;
+
+    color:var(--text);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.memory-title::after{
+
+    content:"+";
+
+    font-size:28px;
+
+    color:var(--accent);
+
+    transition:.35s;
+
+}
+
+.memory-card.active .memory-title::after{
+
+    transform:rotate(45deg);
+
+}
+
+.memory-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .45s ease;
+
+}
+
+.memory-content p{
+
+    padding:0 30px 22px;
+
+    color:var(--secondary);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+.memory-card.active .memory-content{
+
+    max-height:500px;
+
+}
+
+@media(max-width:768px){
+
+.memory-grid{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+}
+
+.memory-title{
+
+font-size:24px;
+
+padding:22px 24px;
+
+}
+
+.memory-content p{
+
+font-size:17px;
+
+padding:0 24px 20px;
+
+}
+
+}
+/* ==========================================
+   CHAPTER 04
+========================================== */
+
+.promise{
+
+    text-align:center;
+
+}
+
+.promise-text{
+
+    margin-top:70px;
+
+}
+
+.promise-text p{
+
+    font-size:32px;
+
+    line-height:2.2;
+
+    color:var(--text);
+
+    font-family:'DM Serif Display',serif;
+
+    font-weight:400;
+
+}
+
+.promise-text .pause{
+
+    margin:70px 0;
+
+    font-size:40px;
+
+}
+
+.promise-text span{
+
+    display:block;
+
+    margin-top:80px;
+
+    font-size:42px;
+
+}
+
+@media(max-width:768px){
+
+.promise-text p{
+
+font-size:25px;
+
+line-height:2;
+
+}
+
+.promise-text .pause{
+
+font-size:32px;
+
+margin:50px 0;
+
+}
+
+}
+/* ==========================================
+   CHAPTER 05
+========================================== */
+
+.reminder{
+
+text-align:center;
+
+}
+
+.reminder-subtitle{
+
+margin-top:25px;
+font-size:20px;
+color:var(--secondary);
+
+}
+
+.reminder-list{
+
+margin:70px auto 0;
+max-width:700px;
+
+display:flex;
+flex-direction:column;
+gap:18px;
+
+}
+
+.reminder-item{
+
+background:rgba(255,255,255,.65);
+
+padding:24px 30px;
+
+border-radius:18px;
+
+font-size:22px;
+
+line-height:1.8;
+
+box-shadow:0 12px 30px rgba(0,0,0,.05);
+
+backdrop-filter:blur(10px);
+
+}
+
+@media(max-width:768px){
+
+.reminder-item{
+
+font-size:18px;
+
+padding:20px;
+
+}
+
+}
+/* ==========================================
+   FINAL
+========================================== */
+
+.ending{
+
+text-align:center;
+padding-bottom:140px;
+
+}
+
+.ending-letter{
+
+max-width:700px;
+
+margin:70px auto;
+
+}
+
+.ending-letter p{
+
+font-size:24px;
+
+line-height:2;
+
+color:var(--secondary);
+
+}
+
+.ending-letter h4{
+
+margin-top:70px;
+
+font-size:42px;
+
+font-family:'DM Serif Display',serif;
+
+font-weight:400;
+
+}
+
+.ending-letter span{
+
+display:block;
+
+margin-top:25px;
+
+font-size:22px;
+
+color:var(--secondary);
+
+}
+
+@media(max-width:768px){
+
+.ending-letter p{
+
+font-size:19px;
+
+}
+
+.ending-letter h4{
+
+font-size:34px;
+
+}
+
+}
